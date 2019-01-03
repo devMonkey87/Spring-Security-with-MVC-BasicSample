@@ -37,58 +37,64 @@
 
 <body>
 
+	
+
 	<div>
+
+
 
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-2">
 
 
-		<!-- Add a logout button -->
+			<!-- Add a logout button -->
+			
 	<form:form action="${pageContext.request.contextPath}/logout"
-		method="POST">
+				method="POST">
 
-		<input type="submit" value="Logout" />
+				<input type="submit" value="Logout" />
 
-	</form:form>
+			</form:form>
 
 
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
-					<h1 class="display-6", style="text-align: center; color: blue;">PÁGINA INICIAL</h1>
+					<h1 class="display-6" , style="text-align: center; color: blue;">PÁGINA
+						INICIAL</h1>
 					<p class="lead">Welcome!</p>
 
 					<div>
-						
-							USUARIO:
-							<security:authentication property="principal.username" />
-							<br> <br> Role(s):
-							<security:authentication property="principal.authorities" />
-							<br> <br> NOMBRE: ${user.firstName}, APELLIDO:
-							${user.lastName}, Email: ${user.email} <br>
 
-							<security:authorize access="hasRole('MANAGER')">
+						USUARIO:
+						<security:authentication property="principal.username" />
+						<br> <br> Role(s):
+						<security:authentication property="principal.authorities" />
+						<br> <br> NOMBRE: ${user.firstName}, APELLIDO:
+						${user.lastName}, Email: ${user.email} <br>
 
-								<!-- Add a link to point to /leaders ... this is for the managers -->
+						<security:authorize access="hasRole('MANAGER')">
 
-								<p>
-									<a href="${pageContext.request.contextPath}/leaders">Leadership
-										Meeting</a> (Solo visible para usuarios MANAGER)
-								</p>
+							<!-- Add a link to point to /leaders ... this is for the managers -->
 
-							</security:authorize>
+							<p>
+								<a href="${pageContext.request.contextPath}/leaders">Leadership
+									Meeting</a> (Solo visible para usuarios MANAGER)
+							</p>
+
+						</security:authorize>
 
 
-							<security:authorize access="hasRole('ADMIN')">
+						<security:authorize access="hasRole('ADMIN')">
 
-								<!-- Add a link to point to /systems ... this is for the admins -->
+							<!-- Add a link to point to /systems ... this is for the admins -->
 
-								<p>
-									<a href="${pageContext.request.contextPath}/systems">IT
-										Systems Meeting</a> (Solo visible para usuarios ADMIN)
-								</p>
+							<p>
+								<a href="${pageContext.request.contextPath}/systems">IT
+									Systems Meeting</a> (Solo visible para usuarios ADMIN)
+							</p>
 
-							</security:authorize>
-						
+						</security:authorize>
+
 					</div>
 				</div>
 			</div>
@@ -98,8 +104,8 @@
 
 
 
-
 		</div>
+	</div>
 </body>
 </html>
 
